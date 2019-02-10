@@ -28,7 +28,7 @@ public class FormaPanel extends JPanel {
 				
 				g.drawOval(x, y, largura, altura);
 				
-			}else if(forma.equals("Retângulo")) {
+			}else if(forma.equals("Retangulo")) {
 				
 				g.drawRect(x, y, largura, altura);
 				
@@ -39,7 +39,7 @@ public class FormaPanel extends JPanel {
 			}else if(forma.equals("Arco")) {
 				
 				g.drawArc(x, x, largura, altura, aleatorio.nextInt(360), aleatorio.nextInt(360));
-				
+			
 			}
 			
 		}

@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -26,6 +28,18 @@ public class FormaFrame extends JFrame{
 		
 		add(panelBox, BorderLayout.NORTH);
 		add(panelForma);
+		
+		boxCores.addItemListener(new ItemListener() {
+
+			@Override
+			public void itemStateChanged(ItemEvent arg0) {
+				
+				panelForma.setForma(arg0.getItem().toString());
+				//System.out.println(arg0.getItem().toString());
+				repaint();
+			}
+			
+		});
 		
 	}
 }
