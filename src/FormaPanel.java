@@ -17,22 +17,34 @@ public class FormaPanel extends JPanel {
 	
 	public void paintComponent(Graphics g) {
 		
-		final int x = aleatorio.nextInt(getWidth());
-		final int y = aleatorio.nextInt(getHeight());
-		final int largura = x + aleatorio.nextInt(getWidth());
-		final int altura = y + aleatorio.nextInt(getHeight());
+		for(int i = 0; i < 20; i++) {
 		
-		if(forma.equals("Circulo")) {
-			
-			g.drawOval(aleatorio.nextInt(getWidth()), aleatorio.nextInt(getHeight()), largura, altura);
-			
-		}else if(forma.equals("Retângulo")) {
-			
-		}else if(forma.equals("Linha")) {
-			
-		}else if(forma.equals("Arco")) {
+		int x = aleatorio.nextInt(getWidth());
+		int y = aleatorio.nextInt(getHeight());
+		int largura = aleatorio.nextInt(getWidth() - x);
+		int altura = aleatorio.nextInt(getHeight() - y);
+	
+			if(forma.equals("Circulo")) {
+				
+				g.drawOval(x, y, largura, altura);
+				
+			}else if(forma.equals("Retângulo")) {
+				
+				g.drawRect(x, y, largura, altura);
+				
+			}else if(forma.equals("Linha")) {
+				
+				g.drawLine(x, y, altura, largura);
+				
+			}else if(forma.equals("Arco")) {
+				
+				g.drawArc(x, x, largura, altura, aleatorio.nextInt(360), aleatorio.nextInt(360));
+				
+			}
 			
 		}
+		
+
 		
 	}
 
